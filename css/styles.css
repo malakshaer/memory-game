@@ -6,8 +6,17 @@
 
 body{
     display: flex;
+    flex-direction: column;
     background-color: rgb(245, 138, 197);
     height: 100vh;
+}
+
+h1{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: sans-serif;
 }
 
 .game-section{
@@ -39,7 +48,6 @@ body{
 }
 
 .card.hidden{
-    rotate: rotateY(0deg);
     opacity: 0;
     transition: opacity 5s;
 }
@@ -62,4 +70,9 @@ body{
     background-color: rgb(238, 185, 216);
     backface-visibility: hidden;
     padding: 30px;
+}
+
+.result{
+    text-align: center;
+    font-size: 30px;
 }

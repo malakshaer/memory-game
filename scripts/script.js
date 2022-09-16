@@ -3,6 +3,7 @@ const cards = document.querySelectorAll(".card");
 let flipCard = false;
 let stopGame = false;
 let cardOne, cardTwo;
+let score = 0;
 
 flip = function () {
   if (this === cardOne) return;
@@ -24,14 +25,23 @@ flip = function () {
 matching = function () {
   let match = cardOne.dataset.language === cardTwo.dataset.language;
 
-  match ? hideCards() : unFlipCards();
+  match ? disableCards() : unFlipCards();
+};
+
+disableCards = function () {
+  cardOne.removeEventListener("click", flip);
+  cardTwo.removeEventListener("click", flip);
+
+  hideCards();
 };
 
 hideCards = function () {
   cardOne.classList.add("hidden");
   cardTwo.classList.add("hidden");
 
-  unFlipCards(false);
+  score += 10;
+  const result = document.querySelector(".result");
+  result.innerHTML = `<h2> Score: ${score}</h2>`;
 };
 
 unFlipCards = function () {
