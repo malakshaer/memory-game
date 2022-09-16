@@ -24,14 +24,14 @@ flip = function () {
 matching = function () {
   let match = cardOne.dataset.language === cardTwo.dataset.language;
 
-  match ? disableCards() : unFlipCards();
+  match ? hideCards() : unFlipCards();
 };
 
-disableCards = function () {
-  cardOne.removeEventListener("click", flip);
-  cardTwo.removeEventListener("click", flip);
+hideCards = function () {
+  cardOne.classList.add("hidden");
+  cardTwo.classList.add("hidden");
 
-  reset();
+  unFlipCards(false);
 };
 
 unFlipCards = function () {

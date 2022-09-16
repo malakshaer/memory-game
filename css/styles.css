@@ -6,27 +6,26 @@
 
 body{
     display: flex;
-    background-color: rgb(76, 196, 196);
+    background-color: rgb(245, 138, 197);
     height: 100vh;
 }
 
 .game-section{
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
-    height: 600px;
+    justify-content: space-between;
+    width: 650px;
+    height: 490px;
     margin: auto;
 }
 
 .card{
     position: relative;
-    width: 33%;
-    height: 50%;
-    margin: 5px;
+    width: calc(33% - 10px);
+    height: calc(50% - 10px);
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform 0.5s;
-    box-shadow: 1px black;
+    transition: transform 0.7s;
     
 }
 
@@ -39,12 +38,18 @@ body{
     transform: rotateY(180deg);
 }
 
+.card.hidden{
+    rotate: rotateY(0deg);
+    opacity: 0;
+    transition: opacity 5s;
+}
+
 .front-face{
     width: 200px;
     height: 230px;
     position: absolute;
     border-radius: 5px;
-    background-color: aquamarine;
+    background-color: #FFF;
     backface-visibility: hidden;
     transform: rotateY(180deg);
 }
@@ -54,7 +59,7 @@ body{
     height: 230px;
     position: absolute;
     border-radius: 5px;
-    background-color: aquamarine;
+    background-color: rgb(238, 185, 216);
     backface-visibility: hidden;
     padding: 30px;
 }
