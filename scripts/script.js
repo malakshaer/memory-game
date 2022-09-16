@@ -20,3 +20,27 @@ flip = function () {
   cardTwo = this;
   matching();
 };
+
+matching = function () {
+  let match = cardOne.dataset.language === cardTwo.dataset.language;
+
+  match ? disableCards() : unFlipCards();
+};
+
+disableCards = function () {
+  cardOne.removeEventListener("click", flip);
+  cardTwo.removeEventListener("click", flip);
+
+  reset();
+};
+
+unFlipCards = function () {
+  stopGame = true;
+
+  setTimeout(() => {
+    cardOne.classList.remove("flip");
+    cardTwo.classList.remove("flip");
+
+    reset();
+  }, 1000);
+};
