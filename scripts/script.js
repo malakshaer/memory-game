@@ -44,3 +44,17 @@ unFlipCards = function () {
     reset();
   }, 1000);
 };
+
+reset = function () {
+  [flipCard, stopGame] = [false, false];
+  [cardOne, cardTwo] = [null, null];
+};
+
+(function shuffle() {
+  cards.forEach((card) => {
+    let randomPlace = Math.floor(Math.random() * 6);
+    card.style.order = randomPlace;
+  });
+})();
+
+cards.forEach((card) => card.addEventListener("click", flip));
