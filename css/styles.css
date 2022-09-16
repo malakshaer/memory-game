@@ -11,8 +11,31 @@ body{
 
 .game-section{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     width: 400px;
     height: 400px;
     margin: auto;
+}
+
+.card{
+    position: relative;
+    width: 33%;
+    height: 50%;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 1px black;
+    
+}
+
+.front-face{
+    width: 200px;
+    height: 230px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: aquamarine;
+    backface-visibility: hidden;
+    padding: 30px;
 }
